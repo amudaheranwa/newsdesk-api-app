@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Newsdesk: search the news, check the claim</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="mast">
+    <div class="wrap">
+        <h1 class="brand">Newsdesk</h1>
+        <p class="tag">Search the news, then check the claim before you file.</p>
+
+    </div>
+</header>
+
+<section class="search" aria-label="Search stories">
+    <div class="wrap">
+        <form class="searchrow" id="searchForm" role="search">
+            <input type="search" id="q" placeholder="Search headline, for example elections or climate" aria-label="Search headlines" autocomplete="off">
+            <button class="btn" type="submit">Search</button>
+
+        </form>
+        <div class="filters">
+            <label class="field">Section
+                <select id="section"><option value="">All sections</option></select>
+            </label>
+            <label class="field">Published
+                <select id="range">
+                    <option value="0">Any time</option>
+                    <option value="24">Last 24 hours</option>
+                    <option value="168">Last 7 days</option>
+                    <option value="720"></option>
+                </select>
+
+            </label>
+            <label class="field">Sort by
+                <select id="sort">
+                    <option value="new">Newest first</option>
+                    <option value="old">Oldest first</option>
+                    <option value="rel">Best match</option>
+                </select>
+
+            </label>
+            <button class="clear" type="button" id="reset">Clear filters</button>
+        </div>
+</section>
+
+<main class="wrap desk">
+    <section aria-labelledby="storiesHd">
+        <h2 id="storiesHd" class="count" aria-live="polite"></h2>
+        <ul class="stories" id="stories"></ul>
+    </section>
+
+    <aside class="side">
+        <section class="panel" aria-labelledby="fcHd">
+            <h2 id="fcHd">Fact-check a claim</h2>
+            <p class="hint">Paste a statement to see how fact-checkers have rated it.</p>
+            <form id="fcForm">
+                <label class="sr" for="claim" style="position:absolute;left:-9999px">claim to check</label>
+                <textarea id="claim" placeholder="For example: unemployment fell by half last year"></textarea>
+                <button class="btn" type="submit" id="fcBtn">Check claim</button>
+            </form>
+            <div class="verdicts" id="verdicts" aria-live="polite"></div>
+        </section>
+
+        <section class="panel" aria-labelledby="svHd">
+            <h2 id="svHd">Saved for follow-up</h2>
+            <ul class="saved" id="saved"></ul>
+        </section>
+    </aside>
+</main>
+
+<footer>
+    <div class="wrap">Headlines and summaries courtesy of The Guardian Open Platform. Fact-check ratings from the Google Fact Check Tools API</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
