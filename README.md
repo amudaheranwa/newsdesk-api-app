@@ -16,6 +16,7 @@ A web app for journalists that does two jobs in one place: search recent news fr
 ## Link & Demo
 
 - **Demo Video (Under 2 Minutes):** [https://youtu.be/jXNKOFJdLe8]
+- **Deployable Link preview:** [https://8082-cs-e1ef9edd-9c22-4fc8-9b1c-20bc6bb590d2.cs-europe-west1-iuzs.cloudshell.dev/]
 
 ---
 
