@@ -107,7 +107,7 @@ def get_news(params):
     results = []
     for r in response.get("results", []):
         f = r.get("fields") or {}
-        results.apend({
+        results.append({
             "id": r.get("id", ""),
             "title": r.get("webTitle", ""),
             "section": r.get("sectionName", ""),
@@ -166,7 +166,7 @@ class Handler(SimpleHTTPRequestHandler):
         body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
-        self.header("Content-Length", str(len(body)))
+        self.send_header("Content-Length", str(len(body)))
         self.end_headers()
         self.wfile.write(body)
 
